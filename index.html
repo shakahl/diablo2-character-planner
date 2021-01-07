@@ -524,8 +524,12 @@
 // initial_load - selects a random class and starts the program
 // ---------------------------------
 function initial_load() {
-	if (location.href == 'https://betweenwalls.github.io/planner/') {
-		location.href='https://betweenwalls.github.io/portal/'
+	if (location.href.includes('betweenwalls.github.io/planner')) {
+		window.stop()
+		var params = new URLSearchParams(window.location.search)
+		var updated_url = 'https://betweenwalls.github.io/portal/';
+		if (Array.from(params).length > 0) { updated_url += '?'+params.toString() }
+		location.href = updated_url
 	} else {
 		skills_all = {amazon:skills_amazon, assassin:skills_assassin, barbarian:skills_barbarian, druid:skills_druid, necromancer:skills_necromancer, paladin:skills_paladin, sorceress:skills_sorceress}
 		character_all = {amazon:character_amazon, assassin:character_assassin, barbarian:character_barbarian, druid:character_druid, necromancer:character_necromancer, paladin:character_paladin, sorceress:character_sorceress}
