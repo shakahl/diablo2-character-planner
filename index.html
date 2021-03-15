@@ -529,6 +529,7 @@ function initial_load() {
 		var params = new URLSearchParams(window.location.search)
 		var updated_url = 'https://betweenwalls.github.io/portal/';
 		if (Array.from(params).length > 0) { updated_url += '?'+params.toString() }
+		else { updated_url += '?v=PoD' }
 		location.href = updated_url
 	} else {
 		skills_all = {amazon:skills_amazon, assassin:skills_assassin, barbarian:skills_barbarian, druid:skills_druid, necromancer:skills_necromancer, paladin:skills_paladin, sorceress:skills_sorceress}
